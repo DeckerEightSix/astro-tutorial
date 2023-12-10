@@ -16,7 +16,9 @@ import BlogPost from '../components/BlogPost.astro'
         <p>This site will update as I work on more components.</p>
 
         <ul>
-          {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+          {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} pubDate={post.frontmatter.pubDate.slice(0,10)}/>)}
           </ul>
+
+		  {allPosts.map((post) => <BlogPost pubDate={post.frontmatter.pubDate} />)}
 
 		</BaseLayout>
